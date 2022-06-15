@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
+*{box-sizing: border-box;}
+
+:root {
+    --background-color: #5d89ff;
+    --buttons-color: #0e3fc4;
+    --font-color: #e4e5eb;
+    --list-bg-color: #e0e4ff;
+    --buttons-color-hovered: #071f61;
+}
+body {
+    background: var(--background-color);
+    margin: 0px;
+    padding: 0px;
+}
+.container {
+    width: 500px;
+    min-height: 500px;
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--list-bg-color);
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Bree Serif', serif;
+    box-shadow: 1px -1px 8px 1px #112644;
+}
+.container h1 {
+    text-align: center;
+    margin-top: 0px;
+    font-family: 'Secular One', sans-serif;
+    font-size: 32px;
+    animation: textBounce 2s ease 0s infinite alternate backwards;
+}
+.add-tasks {
+    display: flex;
+    justify-content: space-between;
+}
+.add-tasks input {
+    width: 80%;
+    padding: 10px;
+    height: 50px;
+    border: solid 2px rgb(211, 211, 211);
+    transition: all 0.5s;
+    border-radius: 6px;
+    font-family: 'Bree Serif', serif;
+}
+.add-tasks input:hover {
+    background-color: #e2e2e2;
+}
+.plus-button {
+    padding-top: 5px;
+    height: 49px;
+    width: 15%;
+    background-color: var(--buttons-color);
+    border: solid 1px var(--buttons-color);
+    transition: all 0.5s;
+    border-radius: 6px;
+}
+.plus-button:hover {
+    background-color: var(--buttons-color-hovered);
+}
+.delete-button {
+    background-color: var(--buttons-color);
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    transition: all 1s;
+    font-family: 'Bree Serif', serif;
+    animation-name: aparecer-botao;
+    animation-duration: 1s;
+}
+.delete-button:hover{
+    background-color: var(--buttons-color-hovered);
+}
+.resultados {
+    margin-top: 50px;
+    list-style: none;
+    padding: 0px;
+    transition: all 1s;
+}
+.tarefa {
+    display: flex;
+    height: 49px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--background-color);
+    padding: 0px 10px 0px 10px;
+    margin-top: 5px;
+    border-radius: 6px;
+    transition: all 0.5s;
+    font-family: 'Bree Serif', serif;
+    animation-name: aparecer-tarefa;
+    animation-duration: 1s;
+}
+.tasks-criadas:hover {
+    background-color: #092570;
+    color: #fff;
+}
+.dia {
+    padding: 3px;
+}
+
+@keyframes aparecer-tarefa {
+    from {width: 10%; height: 0px; font-size: 0px;}
+    to {width: 100%; height: 49px; font-size: 16px;}
+}
+@keyframes aparecer-botao {
+    from {display: none; width: 0px; opacity: 0;}
+    to {display: block; width: 20px; opacity: 1;}
+}
+@keyframes textBounce {
+	0% {
+		animation-timing-function: ease-out;
+		transform: scale(1);
+		transform-origin: center center;
+	}
+
+	10% {
+		animation-timing-function: ease-in;
+		transform: scale(0.91);
+	}
+
+	17% {
+		animation-timing-function: ease-out;
+		transform: scale(0.98);
+	}
+
+	33% {
+		animation-timing-function: ease-in;
+		transform: scale(0.87);
+	}
+
+	45% {
+		animation-timing-function: ease-out;
+		transform: scale(1);
+	}
+}
